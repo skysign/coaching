@@ -1,0 +1,29 @@
+{
+    "compilerOptions": {
+      "lib": [
+        "ESNext", "DOM", "DOM.Iterable"
+      ],
+      "module": "esnext",
+      "target": "esnext",
+      "useDefineForClassFields": true,
+      "moduleResolution": "bundler",
+      "moduleDetection": "force",
+      "allowImportingTsExtensions": true,
+      "resolveJsonModule": true,
+      "isolatedModules": true,
+      "strict": true,
+      "downlevelIteration": true,
+      "skipLibCheck": true,
+      "jsx": "preserve",
+      "allowSyntheticDefaultImports": true,
+      "forceConsistentCasingInFileNames": true,
+      "allowJs": false,
+      "noEmit": true,
+      "types": [
+        "@types/node"
+      ],
+      "strictNullChecks": true
+    },
+    "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "vite.config.ts"],
+    "exclude": ["node_modules", "dist", "test"]
+  }
