@@ -26,6 +26,7 @@
     "@fastify/swagger": "^8.10.0",
     "@fastify/swagger-ui": "^1.9.3",
     "@fastify/type-provider-typebox": "^3.5.0",
+    "@tanstack/vue-query": "^4.35.3",
     "fastify": "^4.22.2",
     "typebox": "^0.0.1",
     "vue": "^3.3.4"

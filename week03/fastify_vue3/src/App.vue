@@ -1,11 +1,29 @@
 <script setup lang="ts">
+import { onErrorCaptured, ref  } from 'vue';
 import HelloWorld from './components/HelloWorld.vue'
+
+const errorRef = ref<Error | null>(null)
+
+onErrorCaptured((error) => {
+  errorRef.value = error;
+})
 </script>
 
 <template>
   <div>
   </div>
-  <HelloWorld msg="Vite + Vue" />
+
+  <div v-if="errorRef">
+    {{  errorRef?.message }}
+  </div>
+  <Suspense v-else>
+    <template #default>
+      <HelloWorld msg="Vite + Vue" />
+    </template>
+    <template #fallback>
+      <div>Loading...</div>
+    </template>
+  </Suspense>
 </template>
 
 <style scoped>

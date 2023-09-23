@@ -1,14 +1,24 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useTodos } from '../queries/useTodos';
+
+// https://tanstack.com/query/v4/docs/vue/overview
 
 defineProps<{ msg: string }>()
 
 const count = ref(0)
+
+const { data, suspense } = useTodos()
+await suspense();
+
 </script>
 
 <template>
   <h1>{{ msg }}</h1>
 
+  <ul>
+      <li v-for="todo in data" :key="todo.id">{{ todo.title }}</li>
+  </ul>
   <div class="card">
     <button type="button" @click="count++">count is {{ count }}</button>
     <p>
